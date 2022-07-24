@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKETA</title>
+</head>
+<body>
+    <script>
+        let surname = prompt("Введите вашу фамилию");
+        while (surname === '' || typeof(surname) !== "string") {
+            surname = prompt("Введите вашу фамилию");
+        }
+        let name = prompt("Введите ваше имя");
+        while (name === '' || typeof(name) !== "string") {
+            name = prompt("Введите ваше имя");
+        }
+        let fathername = prompt("Введите ваше отчество");
+        while (fathername === '' || typeof(fathername) !== "string") {
+            fathername = prompt("Введите ваше отчество");
+        }
+        let age_year = prompt("Введите ваш возраст в годах");
+        if (Number.isInteger(age_year) == false) {
+            age_year = prompt("Введите ваш возраст в годах");
+        }
+        const sex_question = confirm("Ваш пол мужской?");
+        console.log(sex_question);
+        if (sex_question) {
+            let sex = 'мужской';
+        } else {
+            sex = 'женский';
+        }
+        const age_year2 = parseInt(age_year) + 5;
+        const age_day = age_year * 365;
+        let pension = '';
+        if (sex === 'мужской') {
+            if (age_year >= 65){
+                pension = 'да';
+            } else {
+                pension = 'нет';
+              }
+        } else if (age_year >= 60) {
+                pension = 'да';
+          } else {
+                pension = 'нет';
+            };
+        alert('ваше ФИО: ' + surname + ' ' + name + ' ' + fathername + '\n' +
+                'ваш возраст в годах: ' + age_year + '\n' +
+                'ваш возраст в днях: ' + age_day + '\n' +
+                'через 5 лет вам будет: ' + age_year2 + '\n' +
+                'ваш пол: ' + sex + '\n' +
+                'вы на пенсии: ' + pension);
+    </script>
+</body>
+</html>
